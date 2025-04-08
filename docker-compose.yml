@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 services:
   mariadb:
     image: mariadb
@@ -25,33 +24,3 @@ services:
 
   monubuntu:
     image: davidnabel/monubuntu
-
-=======
-services:
-  mariadb:
-    image: mariadb
-    container_name: c_mariadb
-    environment:
-      - MARIADB_USER=userbd
-      - MARIADB_PASSWORD=1234
-      - MARIADB_DATABASE=mabase
-      - MARIADB_ROOT_PASSWORD=test123
-    ports:
-      - "3306:3306"
-
-  monapache:
-    image: davidnabel/mon_apache
-    ports:
-      - "80:80"
-
-  phpmyadmin:
-    image: phpmyadmin
-    environment:
-      - PMA_HOST=mariadb
-    ports:
-      - "8080:80"
-
-  monubuntu:
-    image: davidnabel/monubuntu
-
->>>>>>> 4009fb4eae676317a7b9eb02737367a05a040e95
