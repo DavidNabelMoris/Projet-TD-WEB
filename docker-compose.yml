@@ -3,24 +3,32 @@ services:
     image: mariadb
     container_name: c_mariadb
     environment:
-      - MARIADB_USER=userbd
-      - MARIADB_PASSWORD=1234
-      - MARIADB_DATABASE=mabase
-      - MARIADB_ROOT_PASSWORD=test123
+      - MARIADB_USER=${LOGIN_BD}
+      - MARIADB_PASSWORD=${PASS_BD}
+      - MARIADB_DATABASE=${NOM_BD}
+      - MARIADB_ROOT_PASSWORD=${PASS_ROOT_BD}
     ports:
       - "3306:3306"
+    volumes:
+      - ./bd_data:/var/lib/mysql
 
   monapache:
     image: davidnabel/mon_apache
     ports:
-      - "80:80"
+      - "${PORT_WEB}:80"
+
+    environment:
+      - SERVEUR_BD=${SERVEUR_BD}
+      - LOGIN_BD=${LOGIN_BD}
+      - PASS_BD=${PASS_BD}
+      - NOM_BD=${NOM_BD}
 
   phpmyadmin:
     image: phpmyadmin
     environment:
       - PMA_HOST=mariadb
     ports:
-      - "8080:80"
+      - "${PORT_PHPMYADMIN}:80"
 
   monubuntu:
     image: davidnabel/monubuntu
