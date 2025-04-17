@@ -18,6 +18,7 @@
         
 
         <section class="main">
+            <h2>ma bibliothèque</h2>
             <?php include "select_livre.php" ?>
         </section>
 
