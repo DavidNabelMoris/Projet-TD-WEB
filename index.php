@@ -9,7 +9,7 @@
 <body>
     <section class="up">
         <img src="logo" alt="logo">
-        <h1 class="Titre">Mes Livres</h1>
+        <h1 class="Titre">Mes Livres(test)</h1>
         <a href="client/form_client.html">Se connecter</a>
 		<a href="client/inscription_client.php">S'inscrire</a>
     </section>

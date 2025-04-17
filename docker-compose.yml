@@ -16,7 +16,8 @@ services:
     image: davidnabel/mon_apache
     ports:
       - "${PORT_WEB}:80"
-
+    volumes:
+      - .:/var/www/html
     environment:
       - SERVEUR_BD=${SERVEUR_BD}
       - LOGIN_BD=${LOGIN_BD}
